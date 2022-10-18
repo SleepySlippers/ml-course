@@ -25,7 +25,7 @@ def hinge_loss(scores, labels):
     '''
     assert len(scores.shape) == 1
     assert len(labels.shape) == 1
-    return torch.mean(torch.clamp(1 - scores * labels))
+    return torch.mean(torch.clamp(1 - scores * labels, 0))
 
 
 class SVM(BaseEstimator, ClassifierMixin):
